@@ -1,0 +1,32 @@
+name: Minify JS
+
+on:
+  push:
+    paths:
+      - 'ukneqas3bookmarklet.js'
+
+jobs:
+  minify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install terser
+        run: npm install -g terser
+
+      - name: Minify JS
+        run: terser ukneqas3bookmarklet.js -o ukneqas3bookmarklet.min.js --compress --mangle
+
+      - name: Commit minified file
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add ukneqas3bookmarklet.min.js
+          git commit -m "Auto-minify JS"
+          git push
