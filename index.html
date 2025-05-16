@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><text y=%2214%22 font-size=%2214%22>🧬</text></svg>">
+  <title>UK NEQAS H&I Scheme 3 Bookmarklet</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .bookmarklet {
+      display: inline-block;
+      background: #265449;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .bookmarklet:hover {
+      background: #1e4239;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧬 UK NEQAS H&I Scheme 3 Bookmarklet</h1>
+  <p>This tool helps you populate and extract HLA antibody form data more efficiently using a CSV-based approach.</p>
+
+  <h2>🔧 How to Use</h2>
+  <ol>
+    <li>Drag the button below to your bookmarks bar.</li>
+    <li>Open the online form for UK NEQAS H&I Scheme 3.</li>
+    <li>Click the bookmarklet. Upload and Download buttons will appear.</li>
+  </ol>
+
+  <p><strong>⬇️ Drag this to your bookmarks bar:</strong></p>
+  <p>
+    <a class="bookmarklet" href="javascript:(function(){const s=document.createElement('script');s.src='https://machnine.github.io/neqas3bookmarklet/ukneqas3bookmarklet.min.0.1.1.js';document.body.appendChild(s);})();">
+      🧬NEQAS H&I Scheme 3 Tool
+    </a>
+  </p>
+
+  <h2>📄 Upload a CSV File</h2>
+  <p>The uploaded CSV should have the format:</p>
+  <pre>
+HLA,MFI,UNACCEPTABLE
+A2,24000,1
+B44,2500,0
+DR1, 30000, 1
+  </pre>
+  <p><b>NB:</b> You can input both HLA Class I and II in one view despite the webpage only displaying Class I or Class II</p>
+  <h2>⬇️ Download as CSV File</h2>
+  <p>After processing, you can download a CSV containing checked rows:</p>
+  <pre>
+"HLA","MFI","UNACCEPTABLE"
+"A2","20,000-24,999",1
+"B44","2,000-4,999",0
+"DR1","≥25,000", 1
+  </pre>
+
+  <p>The downloaded file will be automatically named using the sample title in the form (e.g. <code>Sample 01/2025.csv</code>).</p>
+
+</body>
+</html>

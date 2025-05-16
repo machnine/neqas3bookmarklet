@@ -13,7 +13,7 @@ javascript:(function() {
 
   const uploadBtn = document.createElement('button');
   uploadBtn.id = 'hlaUploadBtn';
-  uploadBtn.textContent = '📄 Upload HLA CSV';
+  uploadBtn.textContent = '📄 Upload a CSV File';
   Object.assign(uploadBtn.style, {
     position: 'fixed', top: '20px', right: '20px', zIndex: 9999,
     padding: '8px 12px', fontSize: '14px', background: '#265449',
@@ -65,12 +65,11 @@ javascript:(function() {
 
         if (unacc) unacc.checked = unacceptable;
       });
-
-        uploadBtn.remove();
+        
 		fileInput.remove();
 		setTimeout(() => {
 		  addDownloadButton();
-		  alert("HLA data applied!");
+		  alert("HLA antibody data applied!");
 		}, 200);
     };
 
@@ -85,7 +84,7 @@ javascript:(function() {
   function addDownloadButton() {
     const downloadBtn = document.createElement('button');
     downloadBtn.id = 'hlaDownloadBtn';
-    downloadBtn.textContent = '⬇️ Download Processed Data';
+    downloadBtn.textContent = '⬇️ Download as CSV File';
     Object.assign(downloadBtn.style, {
       position: 'fixed', top: '60px', right: '20px', zIndex: 9999,
       padding: '8px 12px', fontSize: '14px', background: '#265449',
