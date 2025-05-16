@@ -54,11 +54,11 @@ The output file is named automatically using the sample title from the form (e.g
 ## 🔗 Bookmarklet Script
 
 The tool is loaded via this minified JS file:  
-`https://machnine.github.io/neqas3bookmarklet/ukneqas3bookmarklet.min.0.1.1.js`
+`https://machnine.github.io/neqas3bookmarklet/ukneqas3bookmarklet.min.js`
 
 If you're embedding or sharing directly, you can use this wrapped form as a bookmarklet:
 ```javascript
-javascript:(function(){const s=document.createElement('script');s.src='https://machnine.github.io/neqas3bookmarklet/ukneqas3bookmarklet.min.0.1.1.js';document.body.appendChild(s);})();
+javascript:(function(){const s=document.createElement('script');s.src='https://machnine.github.io/neqas3bookmarklet/ukneqas3bookmarklet.min.js';document.body.appendChild(s);})();
 ```
 ## 📎 License
 MIT License – feel free to reuse and adapt with credit.
