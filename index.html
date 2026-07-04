@@ -37,19 +37,20 @@
 <body>
 
   <h1>🧬 UK NEQAS H&I Scheme 3 Bookmarklet</h1>
-  <p>This tool helps you populate and extract HLA antibody form data more efficiently using a CSV-based approach.</p>
+  <p>This tool helps you populate and extract HLA antibody form data on the migrated 2026 UK NEQAS H&I Scheme 3 results form.</p>
+  <p><strong>Note:</strong> This version targets the current Power Apps based form. The retired hidden-field form from the old site is no longer supported.</p>
 
   <h2>🔧 How to Use</h2>
   <ol>
     <li>Drag the button below to your bookmarks bar.</li>
-    <li>Open the online form for UK NEQAS H&I Scheme 3.</li>
+    <li>Open the migrated UK NEQAS H&I Scheme 3 results form.</li>
     <li>Click the bookmarklet. Upload and Download buttons will appear.</li>
   </ol>
 
   <p><strong>⬇️ Drag this to your bookmarks bar:</strong></p>
   <p>
     <a class="bookmarklet" href="javascript:(function(){const s=document.createElement('script');s.src='https://machnine.github.io/neqas3bookmarklet/ukneqas3bookmarklet.min.js';document.body.appendChild(s);})();">
-      🧬NEQAS H&I Scheme 3 Tool
+      🧬 NEQAS H&I Scheme 3 Tool
     </a>
   </p>
 
@@ -59,19 +60,24 @@
 HLA,MFI,UNACCEPTABLE
 A2,24000,1
 B44,2500,0
-DR1, 30000, 1
+DR1,30000,1
+DQA1*01:01,26000,0
   </pre>
-  <p><b>NB:</b> You can input both HLA Class I and II in one view despite the webpage only displaying Class I or Class II</p>
+  <p><code>HLA</code> can be a Class I, Class II, DQA, or DPA row label, for example <code>A2</code>, <code>DR1</code>, <code>DPB1*04:01</code>, <code>DQA1*01:01</code>, or <code>01:01</code> for DQA/DPA rows.</p>
+  <p><code>MFI</code> can be a plain number such as <code>24000</code>. Re-uploading downloaded ranges such as <code>"2,000-4,999"</code> is also supported.</p>
+  <p><code>UNACCEPTABLE</code> should be <code>1</code> to tick the field or <code>0</code> to leave it unticked.</p>
+  <p><b>NB:</b> The 2026 page builds Class I, Class II, DQA, and DPA grid sections in the page DOM, so one CSV can include rows from all four sections.</p>
+
   <h2>⬇️ Download as CSV File</h2>
   <p>After processing, you can download a CSV containing checked rows:</p>
   <pre>
-"HLA","MFI","UNACCEPTABLE"
-"A2","20,000-24,999",1
-"B44","2,000-4,999",0
-"DR1","≥25,000", 1
+HLA,MFI,UNACCEPTABLE
+A2,"20,000-24,999",1
+B44,"2,000-4,999",0
+DR1,"≥25,000",1
   </pre>
 
-  <p>The downloaded file will be automatically named using the sample title in the form (e.g. <code>Sample 01/2025.csv</code>).</p>
+  <p>The downloaded file will be automatically named from the sample code in the form title when available. Otherwise it uses <code>hla_output.csv</code>.</p>
 
 </body>
 </html>
