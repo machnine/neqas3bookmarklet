@@ -64,8 +64,10 @@ The output file is named automatically from the sample code in the form title wh
 
 ## Bookmarklet Script
 
-The tool is loaded via this JavaScript file:
-`https://machnine.github.io/neqas3bookmarklet/ukneqas3bookmarklet.min.js`
+The install page builds a self-contained bookmarklet from this JavaScript file:
+`https://machnine.github.io/neqas3bookmarklet/ukneqas3bookmarklet.js`
+
+This avoids relying on the NEQAS site allowing remote script injection after the bookmarklet has been installed.
 
 If you're embedding or sharing directly, you can use this wrapped form as a bookmarklet:
 ```javascript
